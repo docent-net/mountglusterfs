@@ -3,14 +3,16 @@ mountglusterfs
 
 Init scripts (Debian LSB && RHEL SysVinit).
 
-Those scripts provide scripts for mounting GlusterFS based drives in proper 
-order during startup. For example having gluster server on same machine where
-mounting provided by this server mountpoints it's impossible to mount it with
-_netdev option from fstab because by default mountnfs is started before 
-gluster-server service.
+Those scripts gives you solution for situation when auto-mounting glusterfs drives
+served by gluster-server hosted on same machine. When using Debian and insserv with
+dependency based boot partitions with _netdev option given in /etc/fstab are 
+mounted by /etc/init.d/mountnfs which is started earlier than 
+/etc/init.d/gluster-server - and I couldn't find any way to change that order even 
+when using Required-Start or X-Start-Before/After.
 
 With below scripts You can set new system service, which mounts all glusterfs
-partitions entered in /etc/fstab with _netdev option.
+partitions entered in /etc/fstab with _netdev option and use that service to write 
+another init scripts for any services and create dependency trees.
 
 Installation:
 --------------
