@@ -10,7 +10,7 @@
 #                    than those services' LSB scripts should have certainty
 #                    that glusterfs based drives are up and running.
 ### END INIT INFO
-date +%s_%N > /tmp/glusterlog.6.mountglusterfs.time
+
 . /lib/init/vars.sh
 . /lib/init/mount-functions.sh
 . /lib/lsb/init-functions
