@@ -29,7 +29,7 @@ After installing create new /etc/fstab records using 'glusterfs' as fstype and
 _netdev as additional mount option. After rebooting those resources should be 
 mounted in choosen order. Example line from fstab:
 
-your.host.com:/puppet-volume /etc/puppet/ha_cfg/     glusterfs       _netdev 0 0
+- *your.host.com:/puppet-volume /etc/puppet/ha_cfg/     glusterfs       _netdev 0 0*
 
 Todo:
 --------------
