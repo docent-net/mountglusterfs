@@ -1,11 +1,11 @@
 #! /bin/bash
 ### BEGIN INIT INFO
 # Provides:          mountglusterfs
-# Required-Start:    $local_fs $network glusterfs-server
-# Required-Stop:     $local_fs $network glusterfs-server
+# Required-Start:    $local_fs $network
+# Required-Stop:     $local_fs $network
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Wait for glusterfs-server before mounting gluster drives
+# Short-Description: Mount glusterfs drives
 # Description:       When system services rely on glusterfs drives
 #                    than those services' LSB scripts should have certainty
 #                    that glusterfs based drives are up and running.
