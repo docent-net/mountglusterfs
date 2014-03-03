@@ -27,7 +27,7 @@ do_wait_sync_mount() {
 				F_OPT=0
 				F_FSTYPE=0
 				case "$OPTS" in
-				_netdev)
+				*_netdev*)
 					F_OPT=1
 					;;
 				esac
@@ -55,7 +55,7 @@ do_wait_sync_mount() {
 
 		while ! mountpoint -q ${GLUSTER_MTPTS[$i]}; do
 			sleep 0.1
-			mount -t glusterfs -o ${GLUSTER_OPTS[$i]} ${GLUSTER_DEVS[@]} ${GLUSTER_MTPTS[$i]}
+			mount -t glusterfs -o ${GLUSTER_OPTS[$i]} ${GLUSTER_DEVS[$i]} ${GLUSTER_MTPTS[$i]}
 			
 			TIMEOUT=$(( $TIMEOUT - 1 ))
 			if [ $TIMEOUT -le 0 ]; then
